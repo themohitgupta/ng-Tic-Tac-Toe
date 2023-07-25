@@ -83,6 +83,12 @@ export class AppComponent {
     ) {
       this.winMessage = `${this.itemArray[2]} won`;
     }
+    
+    const isBoardFull = this.itemArray.every((item) => item !== 'empty');
+    if (isBoardFull && !this.winMessage) {
+      this.winMessage = "It's a draw!";
+    }
+    
   };
 
   reloadGame(){
